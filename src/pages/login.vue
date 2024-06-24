@@ -3,10 +3,10 @@ import { useBaseFetch } from '~/api/axiosInstance';
 
   const {
     post: postLogin,
-    data: token,
-    isFetching: isLogingIn,
-    onFetchResponse: onLoginResponse,
-    onFetchError: onLoginError,
+    // data: token,
+    // isFetching: isLogingIn,
+    // onFetchResponse: onLoginResponse,
+    // onFetchError: onLoginError,
   } = useBaseFetch<string>('/api/login', { immediate: false }).text()
 
   const login = async(email: string, password: string) => {
