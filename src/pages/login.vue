@@ -18,7 +18,7 @@ const password = ref("");
 </script>
 
 <template>
-    <div class="grid content-center w-full h-full bg-gradient-to-r from-violet-500 to-fuchsia-500">
+    <div class="grid content-center w-full h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4">
         <div class="h-fit w-full mx-auto max-w-md p-6 rounded-lg bg-white">
           <h1 class="font-semibold text-xl mb-7">Login</h1>
         <form class="mb-0 space-y-6" @submit.prevent="login(email, password)">
