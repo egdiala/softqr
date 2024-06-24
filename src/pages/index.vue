@@ -32,7 +32,7 @@ const staffs = [
             <h1 class="font-semibold text-xl">SoftQR</h1>
             <button type="button" class="px-3 py-1 rounded-md bg-red-100 text-red-600">logout</button>
         </header>
-        <div class="h-full w-full mx-auto max-w-screen-2xl">
+        <div class="h-full w-full mx-auto max-w-screen-2xl px-4">
             <div class="flex flex-col bg-white rounded-lg overflow-hidden">
                 <div class="border border-gray-300 rounded-t-lg border-x border-x-gray-300 h-full lg:w-full lg:left-auto lg:relative lg:right-auto lg:overflow-x-clip left-0 right-0 overflow-x-scroll scrollbar-hide">
                     <table className='table-auto w-full'>
