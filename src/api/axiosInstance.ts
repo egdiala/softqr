@@ -17,12 +17,13 @@ export const useAuthFetch = createFetch({
   options: {
     async beforeFetch({ options, cancel }) {
       const auth = useAuthStore()
+      const user = JSON.parse(localStorage.getItem("token") as string)
       if (!auth.token)
         cancel()
 
       options.headers = {
         ...options.headers,
-        Authorization: `Bearer ${auth.token}`,
+        Authorization: `Bearer ${user.jwt}`,
         Accept: 'application/json',
       }
 

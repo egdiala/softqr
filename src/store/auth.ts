@@ -1,5 +1,5 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { useBaseFetch } from '~/api/axiosInstance'
+import { useAuthFetch, useBaseFetch } from '~/api/axiosInstance'
 
 export const useAuthStore = defineStore('users', () => {
   const router = useRouter()
@@ -25,6 +25,18 @@ export const useAuthStore = defineStore('users', () => {
   const lastURL = ref('/')
   onLoginResponse(() => router.push(lastURL.value))
 
+  const {
+    get: fetchGuests,
+    data: guests,
+    isFetching,
+    onFetchResponse,
+    onFetchError,
+  } = useAuthFetch<string>('/guests', { immediate: false }).text()
+
+  const getGuests = async() => {
+    await fetchGuests().execute()
+  }
+
   return {
     token,
     login,
@@ -33,6 +45,11 @@ export const useAuthStore = defineStore('users', () => {
     onLoginError,
     isAuthenticated,
     lastURL,
+    guests,
+    getGuests,
+    isFetching,
+    onFetchResponse,
+    onFetchError,
   }
 })
 
