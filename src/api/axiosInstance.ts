@@ -1,7 +1,7 @@
 import { createFetch } from '@vueuse/core'
 import { useAuthStore } from '~/store/auth'
 
-export const API_URL = 'https://softqr-api.onrender.com'
+export const API_URL = 'http://0.0.0.0:1337/api'
 
 export const useBaseFetch = createFetch({
   baseUrl: API_URL,
