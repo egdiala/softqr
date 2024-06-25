@@ -3,7 +3,7 @@ import { useAuthFetch } from '~/api/axiosInstance';
 const router = useRouter()
 onMounted(() => {
   const user = JSON.parse(localStorage.getItem("token") as string)
-  if (!user.jwt) {
+  if (!user?.jwt) {
     router.push("/login")
   }
 });
